@@ -154,7 +154,6 @@ function newFunction(req) {
 }
 
 app.set('port', (process.env.PORT || 4000))
-//const PORT = process.env.PORT || 4000;
 
 db.connect((err) => {
     if (err) {
