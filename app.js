@@ -9,9 +9,6 @@ const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
-
-
-
 // Passport Config
 require('./config/passport')(passport);
 
@@ -152,21 +149,22 @@ app.use((err, req, res, next) => {
     });
 })
 
+function newFunction(req) {
+    return req.query.search;
+}
 
-const PORT = process.env.PORT || 4000;
+
+app.set('port', (process.env.PORT || 4000))
+//const PORT = process.env.PORT || 4000;
 
 db.connect((err) => {
     if (err) {
         console.log('kein Zugriff auf Datenbank');
         process.exit(1);
     } else {
-        app.listen(PORT, () => {
-            console.log('Verbindung mit Dantenbank hergestellt');
-
-        });
+        
+        app.listen(app.get('port'), function() {
+            console.log("Node app is running at localhost:" + app.get('port'))
+          })
     }
 })
-
-function newFunction(req) {
-    return req.query.search;
-}
