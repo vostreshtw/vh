@@ -1,0 +1,73 @@
+    <% include ./partials/header %>    
+    <main>
+        <!-- Uebersicht Area -->
+        <div id="Uebersicht">
+            <div id="Uebersicht-text">
+                <div id="Uebersicht-text-inner">
+                        <p>Hallo <%= name %>!</p>
+                    <h1> E & T </h1>
+                    <h2> Vietnam ehrlich erleben </h2>
+                    <a href="#content1" class="btn" id="Ueber-uns">
+            Über Uns   
+          </a>
+                    <a href="#kontakt" class="btn" id="Kontakt">
+               Kontakt
+              </a>
+
+                </div>
+            </div>
+            <div id="Uebersicht-image"></div>
+        </div>
+
+        <div id="content1">
+            <div id="header">
+                <h2>Über Uns</h2>
+            </div>
+
+            <img src="img/background_home.jpg" alt="">
+            <div class="caption">
+                <h3> E & T Restaurant </h3>
+                <p>
+                    Im Mittelpunkt unserer Philosophie steht die authentische Küche Südvietnams. Eine Besonderheit im unrerem Restaurant sind die kleinen Schälchen, die typisch sind für die vietnamesische Esskultur und durch die man zahlreiche Möglichkeiten zum Schlemmen
+                    bekommt. Prinzipiell werden unsere hausgemachten Köstlichkeiten besonders schonend, mit geringer Hitze und wenig Öl, frisch zubereitet. Besonderen Wert legen wir auch auf einen freundschaftlichen Umgang mit unseren Mitarbeitern, der
+                    sich in einem herzlichen Service widerspiegelt. Die Atmosphäre ist sehr persönlich geprägt – wir kennen und lieben die Besonderheiten unserer Stammgäste. Es sind die kleinen Unterschiede, die unsere beiden Saigon-Restaurants so einzigartig
+                    machen. Mit unserer Überzeugung von ehrlicher Küche, freuen wir uns, Sie als Gast begrüßen zu dürfen. Welcome to E & T.
+                </p>
+            </div>
+
+
+        </div>
+
+        <div id="kontakt">
+            <div id="header">
+                <h2>Kontakt</h2>
+            </div>
+
+            <div class="container">
+                <div class="form-container kontakt-container">
+                    <form action="https://formspree.io/etrestaurant.vietnam@gmail.com" method="POST">
+                        <h2> Kontaktformular</h2>
+                        <input type="name" placeholder="Name" />
+                        <input type="email" placeholder="Email" />
+                        <textarea name="nachricht" placeholder="Schreiben Sie uns eine Nachricht..."></textarea>
+                        <button class="btn btn-primary" id="Ueber-uns" type="submit">
+                                Senden  </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <h3>So finden Sie uns</h3>
+
+            <p> Kanstr.23 - 10623 Berlin</p>
+            <p>Email:
+                <strong>contact@etrestaurant.de</strong>
+            </p>
+            <p>Phone:
+                <strong>(49)155-5678-5555</strong>
+            </p>
+            <div id="map"></div>
+        </div>
+    </main>
+
+    <% include ./partials/footer %>
