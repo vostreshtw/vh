@@ -1,22 +1,21 @@
 <% if(typeof errors != 'undefined'){ %>
     
     <% errors.forEach(function(error) { %>
-      <%= error.msg %>
-
+      <p class="btn btn-primary"><%= error.msg %> </p>
     <% }); %> 
     
     <% } %> 
 <!--success-->
     <% if(success_msg != ''){ %>
-      <%= success_msg %>
+      <p class="btn btn-primary"><%= success_msg %></p>
     <% } %>
 
 <!--error msg-->
     <% if(error_msg != ''){ %>
-      <%= error_msg %>
+      <p class="btn btn-primary"><%= error_msg %></p>
       <% } %>
 
       <!--error-->
       <% if(error != ''){ %>
-          <%= error %>
+        <p class="btn btn-primary"><%= error %></p>
         <% } %>
