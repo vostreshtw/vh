@@ -1,0 +1,67 @@
+<% include ../partials/header %>
+    <main>
+        <div class="container dishes">
+
+            <div class="create">
+                <div class="col-lg-8">
+                    <form action="/dishes" method="POST" class="form-container" id="form">
+                        <div class="form-group">
+                            <label for="dish[name]">NAME</label>
+                            <input type="text" class="form-control" name="Name" placeholder="name">
+
+                            <label for="preis">PREIS</label>
+                            <input type="text" class="form-control" name="preis" placeholder="Preis">
+
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-lg-8">
+
+                <% if(noMatch !== null) { %>
+                    <h3>
+                        <%= noMatch %>
+                    </h3>
+                    <p>
+                        <form action="/dishes" method="GET" class="form-container">
+                            <div class="form-group">
+                                <input type="submit" value="SHOW DISHES">
+                            </div>
+                        </form>
+                    </p>
+                    <% } %>
+            </div>
+
+            <div class="dishes">
+                <div class="dish-container">
+                    <% dishes.forEach(function(dish){ %>
+
+                        <div class="dish">
+                            <img class="image-dish" src="img/<%=dish.Name%>.jpg">
+                            <div class="dish-body">
+                                <h4 class="btn">
+                                    <%=dish.Name%>
+                                </h4>
+                                <h4 class="btn">
+                                    <%=dish.preis%>
+                                </h4>
+                                <a class="btn" href="/dishes/<%= dish._id %>">Mehr Info</a>
+
+                            </div>
+                        </div>
+
+                        <% }); %>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+    <% include ../partials/footer %>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

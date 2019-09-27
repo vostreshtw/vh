@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+    <main>
+
+        <div class="container dishes">
+
+
+
+            <div class="dishes">
+                <div class="dish-container">
+
+                    <div class="dish">
+                        <img class="image-dish" src="img/<%=dish.Name%>.jpg">
+                        <div class="dish-body">
+                            <h4 class="btn">
+                                <%=dish.Name%>
+                            </h4>
+                            <h4 class="btn">
+                                <%=dish.preis%>
+                            </h4>
+                            <a type="button" class="btn btn-secondary" href="/dishes/<%= dish._id %>/edit">Edit</a>
+
+                            <form id="delete-form" action="/dishes/<%= dish._id %>?_method=DELETE" method="POST">
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+
+                        </div>
+                        <a href="/dishes">Abbrechen</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+    <% include ../partials/footer %>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

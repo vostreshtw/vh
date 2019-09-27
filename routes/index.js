@@ -16,12 +16,26 @@ router.get('/dashboard', ensureAuthenticated, (req, res) =>
 );
 
 // Crud
-router.get('/crud', ensureAuthenticated, (req, res) =>
-    res.render('crud', {
+router.get('/dishes/crud', ensureAuthenticated, (req, res) =>
+    res.render('dishes/crud', {
         name: req.user.name
     })
 );
 
+// 
+router.get('/dishes/edit', ensureAuthenticated, (req, res) =>
+    res.render('dishes/edit', {
+        name: req.user.name
+    })
+);
+
+
+// Crud
+router.get('/dishes/show', ensureAuthenticated, (req, res) =>
+    res.render('dishes/show', {
+        name: req.user.name
+    })
+);
 
 // Angebot
 router.get('/angebot', (req, res) =>
@@ -37,11 +51,6 @@ router.get('/impressum', (req, res) =>
     })
 );
 
-// Search
-router.get('/search', (req, res) =>
-    res.render('search', {
-        name: ' '
-    })
-);
+
 
 module.exports = router;
